@@ -1,0 +1,63 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.outerbox {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    margin-top: 50px;
+    padding: 5px;
+    box-shadow: 0px -4px 21px -3px rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: 0px -4px 21px -3px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px -4px 21px -3px rgba(0, 0, 0, 0.57);
+}
+.outerbox table {
+    display: flex;
+    height: fit-content;
+    width: 500px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 10px;
+}
+
+tr input {
+    width: 100%;
+}
+
+#submit {
+    display: flex;
+    justify-content: center;
+}
+
+table #register {
+    background-color: #20A8F5;
+    color: white;
+    border: #20A8F5;
+    border-radius: 5px;
+    width: 120px;
+
+}
+
+table input {
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+table td {
+    padding-right: 35px;
+}
+
+table td select{
+    height: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}

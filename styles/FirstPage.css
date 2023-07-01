@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.outerbox {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#profile img{
+    margin-right: 15px;
+    height: 30px;
+    width: 35px;
+    border: 2px solid red;
+    border-radius: 100%;
+}
+
+.outerbox .nav {
+    background-color: #20A8F5;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 15px;
+}
+
+.child {
+    display: flex;
+    align-items: center;
+    width: 550px;
+    justify-content: space-evenly;
+    color: white;
+    position: relative;
+    right: 30px;
+}
+
+.nav .child a {
+    color: white;
+    text-decoration: none;
+}
+
+.child a:hover {
+    color: rgb(38, 62, 202);
+}
+
+.homepage_body {
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.homepage_body .content {
+    width: 500px;
+    
+}
+.homepage_body .content button{
+    background-color: #20A8F5;
+    border-color: #20A8F5;
+    border-radius: 5px;
+    height: 50px;
+    width: 120px;
+}
+.homepage_body .content #login{
+    text-decoration: none;
+    color: white;
+    
+}
+.homepage_body .content #login:hover{
+    color:rgb(38, 62, 202) ;
+}
+.img_container {
+    height: 400px;
+    width: 500px;
+}
+
+.img_container img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.footer {
+    padding: 10px 100px 30px 350px;
+    width: 100vw;
+    height: 150px;
+    background-color: #20A8F5;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer .about {
+    width: 400px;
+}
+.footer .about h2:hover{
+    color: rgb(38, 62, 202);
+}
+
+.footer .contact {
+    width: 400px;
+}
+.footer .contact h2:hover{
+    color: rgb(38, 62, 202);
+}
+
+.footer .contact div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .contact div a {
+    margin-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}

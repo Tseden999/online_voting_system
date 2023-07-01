@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    </link>
+</head>
+
+<body>
+    <div class="container">
+        <div id="image">
+            <img src="./images/Online.png" height="250px" width="300px">
+        </div>
+        <div class="form" >
+            <form>
+                <h2>Online Voting System</h2>
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" id="username" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" id="password" />
+            </div>
+            <div>
+                <label style="margin-bottom: 5px;">User role</label>
+                <select name="role" id="role">
+                    <option value="voters">Voters</option>
+                    <option value="candidates">Candidates</option>
+                </select>
+            </div>
+            <div class="forgot_register">
+                <a href="./registerForm.html" id="register_now">Register New Account</a>
+            </div>
+            <div id="Login">
+                <button type="button" id="button" name="Login" onclick="login()"> Login </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./scripts/login.js"></script>
+</html>

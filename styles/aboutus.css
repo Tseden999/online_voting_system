@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.outerbox {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.outerbox .nav {
+    background-color: #20A8F5;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 80px;
+    padding-right: 15px;
+}
+
+.child {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    justify-content: space-evenly;
+    color: white;
+    position: relative;
+    right: 30px;
+}
+
+.nav .child a {
+    color: white;
+    text-decoration: none;
+}
+
+.child a:hover {
+    color: rgb(38, 62, 202);
+}
+
+.outerbox .box2 {
+   font-size: large;
+    margin-top: 25px;
+    height: 50%;
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+}
+
+.outerbox .box4{
+    height:50%;
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+    
+}

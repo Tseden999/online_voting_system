@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Register form</title>
+    <link rel="stylesheet" href="./styles/registerForm.css">
+    </link>
+</head>
+
+<body>
+    <div class="outerbox">
+        <form enctype="multipart/form-data">
+            <table>
+                <center><h2>Registration form</h2></center>
+                <tr>
+                    <td>Name</td>
+                    <td>User role</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name" id="name" required/></td>
+                    <td>
+                        <select name="role" id="role">
+                            <option value="voters">Voters</option>
+                            <option value="candidates">Candidates</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>Address</td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="age" name="age" required/></td>
+                    <td><input type="text" id="address" name="address" required/></td>
+                </tr>
+                <tr>
+                    <td>Contact no.</td>
+                    <td>Email</td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="contact" name="contact"  required/>
+                    </td> <td><input type="email" id="email"  name="email" required/></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>Profile</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="password"  name="password" required/></td>
+                    <td><input type="file" id="profile" name="profile" required/></td>
+                </tr>
+                <tr id="submit">
+                    <td colspan="2">
+                        <input type="button" name="register" value="Register" id="register" />
+                    </td>
+                </tr>
+            </table>
+        </form> 
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./scripts/register.js"></script>
+</html>
