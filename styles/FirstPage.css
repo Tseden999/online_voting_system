@@ -130,3 +130,10 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/* to make website responsive */
+@media(max-width:400px){
+    .outerbox {
+         width: 40%;
+    }
+ }
