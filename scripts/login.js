@@ -24,7 +24,7 @@ function login() {
                 }, {});
 
                 if (message.includes("Login successfull !")) {
-                    localStorage.setItem("loginDetails", JSON.stringify(filterDetails));
+                    localStorage.setItem("loginDetails", JSON.stringify(filterDetails));//convert object into string
                     location.assign("./FirstPage.html");
                 }
             } catch (error) {

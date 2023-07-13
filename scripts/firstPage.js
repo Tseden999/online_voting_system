@@ -5,6 +5,7 @@ const login = document.getElementById("login");
 const voting = document.getElementById("voting");
 const candidates = document.getElementById("candidates");
 const voters = document.getElementById("voters");
+const election = document.getElementById("election");
 const logoutBtn = document.getElementById("logout");
 const profile = document.getElementById("profile_img");
 const usernameElement = document.getElementById("username");

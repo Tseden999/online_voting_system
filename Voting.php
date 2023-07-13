@@ -53,7 +53,6 @@
                         <span>Contact: <?php echo $row["contact_no"]; ?></span><br>
                         <span>Address: <?php echo $row["address"]; ?></span><br>
                         <span>Email: <?php echo $row["email"]; ?></span><br>
-                        <span>Total Votes: <?php echo strlen(str_replace(", ","",$row["voterID"])); ?></span><br>
                         <?php 
                             if($loginDetails["role"] === "voters"){
                         ?>
