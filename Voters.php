@@ -39,7 +39,7 @@
             </div>
             <div class="Voters">
                 <?php
-                    while($row = mysqli_fetch_assoc($result)) {
+                    while($row = mysqli_fetch_assoc($result)) { //to get data from each row
                 ?>
                     <div class="box1">
                         <div id="image">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="content">
                             <span>Name: <?php echo $row["username"]; ?></span><br>
-                            <span>Age: <?php echo $row["username"]; ?></span><br>
+                            <span>Age: <?php echo $row["age"]; ?></span><br>
                             <span>Contact: <?php echo $row["contact_no"]; ?></span><br>
                             <span>Address: <?php echo $row["address"]; ?></span><br>
                             <span>Email: <?php echo $row["email"]; ?></span><br>
