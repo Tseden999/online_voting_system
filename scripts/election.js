@@ -18,6 +18,6 @@ const ElectionStartDate = new Date()-1;//previous date 10
 const CurrentDate = new Date();//current date 9
 
 //
-if(signupDetails.role != "admin"  && CurrentDate> ElectionStartDate ){
+if(signupDetails.role != "admin"  && CurrentDate > ElectionStartDate ){
   location.assign("./FirstPage.html")
 };
