@@ -12,7 +12,7 @@
     $role=$_POST['role'];
 
     //empty validation
-    if(strlen($name)===0 ||strlen($age)===0 ||strlen($address)===0 ||strlen($contact)===0 ||strlen($eamil)===0 ||strlen($password)===0 ||strlen($role)===0 ){
+    if(strlen($name)===0 ||strlen($age)===0 ||strlen($address)===0 ||strlen($contact)===0 ||strlen($email)===0 ||strlen($password)===0 ||strlen($role)===0 ){
         echo "Please fill up all the fields!!!";
     }
     else {
