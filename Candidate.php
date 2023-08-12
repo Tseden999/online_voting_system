@@ -29,7 +29,7 @@
                <a href="./voters.php" id="voters">Voters</a>
                <a href="./Candidate.php" id="candidates">Candidates</a>
                <a href="./Voting.php" id="voting">Voting</a>
-               <a href="./Election.html" id="election">Election</a>
+               <a href="./election.php" id="election">Election</a>
                <a id="logout" onclick="logout()">Logout</a>
                <div id="profile">
                   <img id="profile_img" />
