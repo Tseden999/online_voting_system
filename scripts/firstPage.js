@@ -11,6 +11,7 @@ const profile = document.getElementById("profile_img");
 const usernameElement = document.getElementById("username");
 const voteBtn = document.getElementById("voteBtn");
 
+  
 if(loginDetails?.username){
     usernameElement.innerText = loginDetails?.username ?? "";
 

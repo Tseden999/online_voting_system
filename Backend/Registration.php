@@ -27,18 +27,38 @@
         // insert above data in database
         $insert_query = "";
         if($role === "voters"){
-            $insert_query = "INSERT INTO voters( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
+            $alreadyExists = mysqli_query($conn, "SELECT * FROM voters WHERE email='$email'");
+            if($alreadyExists->num_rows > 0) echo "Voter already exists !";
+            else {
+                $insert_query = "INSERT INTO voters( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
+                if($conn->query($insert_query) === TRUE){
+                    echo "Register successfull !";
+                }else{
+                    echo "Failed to register !!";
+                }
+            }
         }else if($role === "candidates"){
-            $insert_query = "INSERT INTO candidates( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
+            $alreadyExists = mysqli_query($conn, "SELECT * FROM candidates WHERE email='$email'");
+            if($alreadyExists->num_rows > 0) echo "Candidate already exists !";
+            else {
+                $insert_query = "INSERT INTO candidates( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
+                if($conn->query($insert_query) === TRUE){
+                    echo "Register successfull !";
+                }else{
+                    echo "Failed to register !!";
+                }
+            }
         }else{
-            $insert_query = "INSERT INTO admin( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
-        }
-        
-
-        if($conn->query($insert_query) === TRUE){
-        echo "Register successfull !";
-        }else{
-            echo "Failed to register !!";
+            $alreadyExists = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email'");
+            if($alreadyExists->num_rows > 0) echo "Admin already exists !";
+            else {
+                $insert_query = "INSERT INTO admin( username, email, password, contact_no, age, address, profile) VALUES( '$name',' $email', '$password', '$contact', '$age','$address','$fileName')";
+                if($conn->query($insert_query) === TRUE){
+                    echo "Register successfull !";
+                }else{
+                    echo "Failed to register !!";
+                }
+            }
         }
     } else {
         // Error uploading the file

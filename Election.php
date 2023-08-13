@@ -66,6 +66,7 @@
 <head>
     <title> Election page</title>
     <link rel="stylesheet" href="./styles/election.css">
+    <script src="./scripts/election.js"></script>
     </link>
 </head>
 
@@ -137,6 +138,5 @@
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./scripts/election.js"></script>
 
 </html>
