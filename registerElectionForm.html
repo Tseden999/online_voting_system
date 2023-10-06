@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Register form</title>
+    <link rel="stylesheet" href="./styles/registerForm.css">
+    </link>
+</head>
+
+<body>
+    <div class="outerbox">
+        <form enctype="multipart/form-data" >
+            <table>
+                <center><h2>Registration Election</h2></center>
+                <tr>
+                    <td>Election Name</td>
+                    <td>Election Type</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name" id="name" required/></td>
+                    <td>
+                        <input type="text" name="electionType" id="electionType" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Date</td>
+                    <td>End Date</td>
+                </tr>
+                <tr>
+                    <td><input type="date" id="startDate" name="startDate" required/></td>
+                    <td><input type="date" id="endDate" name="endDate" required/></td>
+                </tr>
+                <tr id="submit">
+                    <td colspan="2">
+                        <input type="button" name="register" value="Register" id="register" onclick="registerElection()" />
+                    </td>
+                </tr>
+            </table>
+        </form> 
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script >
+    const loginDetails = JSON.parse(localStorage.getItem("loginDetails"));
+
+if(!loginDetails || loginDetails?.role !== "admin") {
+    alert("Only admin is allow to access this page !")
+    location.assign('FirstPage.html');
+}
+
+function registerElection() {
+    const name = document.getElementById("name").value;
+    const electionType = document.getElementById("electionType").value;
+    const startDate = document.getElementById("startDate").value;
+    const endDate = document.getElementById("endDate").value;
+
+    // form validation
+    if(new Date(startDate) > new Date(endDate)) return alert("Start data must be before End date !ss")
+
+    $.ajax({
+        url: './Backend/registerElection.php',
+        method: 'POST',
+        data: { name, electionType, startDate, endDate},
+        success: function (response) {
+            try {
+                const _response = response?.split(";;");
+                const message = _response[0];
+                const details = _response[1];
+
+                let filterDetails = details?.split(";")
+
+                filterDetails = filterDetails?.reduce(function (result, item) {
+                    var parts = item.split('=');
+                    var key = parts[0];
+                    var value = parts[1];
+                    result[key] = value.trim();
+                    return result;
+                }, {});
+
+                alert(message)
+                location.assign('FirstPage.html');
+            } catch (error) {
+                console.log(error)
+                alert("Failed to login !")
+            }
+        }
+    });
+}
+</script>
+</html>

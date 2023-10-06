@@ -83,12 +83,37 @@
                 <a id="logout" onclick="logout()">Logout</a>
             </div>
         </div>
+        <table>
+          <thead>
+            <tr>
+            <th>Election Name</th>
+            <th>Election Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php 
+            $select_query = "SELECT * FROM elections ORDER BY id DESC ";
+            $result = mysqli_query($conn, $select_query);
+            while($row = mysqli_fetch_assoc($result)){
+              ?>
+                <tr>
+              <td><?php echo $row["name"]; ?></td>
+              <td><?php echo $row["electionType"]; ?></td>
+              <td><?php echo $row["startDate"]; ?></td>
+              <td><?php echo $row["endDate"]; ?></td>
+            </tr>
+          <?php } ?>
+          </tbody>
+        </table>
         <div class="middle">
-
           <?php 
             $select_query = "SELECT * FROM elections ORDER BY id DESC LIMIT 1";
             $result = mysqli_query($conn, $select_query);
             while($row = mysqli_fetch_assoc($result)){
+              echo date("Y-m-d ") . "/" . $row["endDate"];
+              if(date("Y-m-d ") >  $row["endDate"]){
               ?>
                 <div class="header">
                     <h2><?php echo $row["name"]; ?></h2>
@@ -132,9 +157,8 @@
                             </div>
                     </div>
                 </div>
-          <?php } ?>
-      
-          </div>
+          <?php } } ?>
+        </div>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -14,8 +14,11 @@ console.log(signupDetails.username);
 console.log(signupDetails.password);
  
 
-const ElectionStartDate = new Date()-1;//previous date 10
-const CurrentDate = new Date();//current date 9
+//const ElectionStartDate = new Date()-1;//previous date 10
+//const CurrentDate = new Date();//current date 9
+const ElectionStartDate = new Date();
+ElectionStartDate.setDate(ElectionStartDate.getDate() - 10);
+
 
 //
 if(signupDetails.role != "admin"  && CurrentDate > ElectionStartDate ){

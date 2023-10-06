@@ -1,5 +1,6 @@
-
+//to get item form localstorage
 const loginDetails = JSON.parse(localStorage.getItem("loginDetails"));
+
 const register = document.getElementById("register");
 const login = document.getElementById("login");
 const voting = document.getElementById("voting");
@@ -10,6 +11,7 @@ const logoutBtn = document.getElementById("logout");
 const profile = document.getElementById("profile_img");
 const usernameElement = document.getElementById("username");
 const voteBtn = document.getElementById("voteBtn");
+const createElectionBtn = document.getElementById("createElection");
 
   
 if(loginDetails?.username){
@@ -20,8 +22,15 @@ if(loginDetails?.username){
     if(voting) voting.style.display = "block";
     if(candidates) candidates.style.display = "block";
     if(logoutBtn) logoutBtn.style.display = "block";
+    
     profile.style.display ="block";
+    
 
+    if(!loginDetails || loginDetails?.role !== "admin") {
+        createElectionBtn.style.display="none";
+    } else {
+        createElectionBtn.style.display="block";
+    }
     if(loginDetails.profile){
         profile.src = "./Backend/uploads/"+loginDetails.profile;
     }else{
@@ -34,6 +43,7 @@ if(loginDetails?.username){
     if(voting) voting.style.display = "none";
     if(candidates) candidates.style.display = "none";
     if(voters) voters.style.display = "none";
+    if(createElectionBtn) createElectionBtn.style.display= "none";
     profile.style.display ="none";
 }
 
