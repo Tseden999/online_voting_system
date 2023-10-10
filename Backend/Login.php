@@ -1,7 +1,7 @@
 <?php
 include "DbConnection.php";
     
-session_start();
+session_start();//stores data in server
 
 $username= $_POST['username'];
 $password= $_POST['password'];

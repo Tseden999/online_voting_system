@@ -112,7 +112,6 @@
             $select_query = "SELECT * FROM elections ORDER BY id DESC LIMIT 1";
             $result = mysqli_query($conn, $select_query);
             while($row = mysqli_fetch_assoc($result)){
-              echo date("Y-m-d ") . "/" . $row["endDate"];
               if(date("Y-m-d ") >  $row["endDate"]){
               ?>
                 <div class="header">

@@ -9,9 +9,10 @@ function login() {
         data: { username, password, role },
         success: function (response) {
             try {
+                //split gives value in array
                 const _response = response?.split(";;");
-                const message = _response[0];
-                const details = _response[1];
+                const message = _response[0];//first index of array is message
+                const details = _response[1];//second will be details of logined user like username,role..
 
                 let filterDetails = details?.split(";")
 

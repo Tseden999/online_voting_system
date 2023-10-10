@@ -18,6 +18,10 @@
 
     if($conn->query($insert_query) === TRUE){
         echo "Register successfull !";
+        //reset all the voted id of candidates
+        $sql = "UPDATE candidates SET voterID = ''";
+        $result=$conn -> query ($sql);
+        
     }else{
         echo "Failed to register !!";
     }

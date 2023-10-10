@@ -4,6 +4,7 @@
     session_start();
 
     $loginDetails = $_SESSION["loginDetails"];
+    $endDate="";
 
 
         // Count the total number of candidate in the table
@@ -91,6 +92,7 @@
                 $select_query = "SELECT * FROM elections ORDER BY id DESC LIMIT 1";
                 $result = mysqli_query($conn, $select_query);
                 while($row = mysqli_fetch_assoc($result)){
+                    $endDate= $row["endDate"];
               ?>
                 <div class="header">
                     <div class="electionTitle">
@@ -121,7 +123,7 @@
                         <span>Address: <?php echo $row["address"]; ?></span><br>
                         <span>Email: <?php echo $row["email"]; ?></span><br>
                         <?php 
-                            if($loginDetails["role"] === "voters"){
+                            if($loginDetails["role"] === "voters" && date("Y-m-d ") <   $endDate ){
                         ?>
                             <button onclick='vote("<?php echo $row["id"]; ?>")'>Vote</button>
                         <?php } ?>
